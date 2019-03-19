@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>android | Karma&#39;s Blog | 一名韭菜的自我修養</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content>
+    <meta name="description" content="平时我们Android开发的时候，为了不重复造轮子，经常用到第三方开源项目，有了Android studio的Gradle，我们就一句代码就可以依赖远程代码仓库了，这比eclipse方便多了。假如我们也想自己造轮子开源给别人用呢？可以用JitPack。比Maven Central、jCenter简单多了。  ####JitPack是什么？  JitPack是一个自定义的Maven仓库。  发布步">
+<meta property="og:type" content="website">
+<meta property="og:title" content="android">
+<meta property="og:url" content="https://github.com/karmalove/karmalove.github.io.git/android/index.html">
+<meta property="og:site_name" content="Karma&#39;s Blog">
+<meta property="og:description" content="平时我们Android开发的时候，为了不重复造轮子，经常用到第三方开源项目，有了Android studio的Gradle，我们就一句代码就可以依赖远程代码仓库了，这比eclipse方便多了。假如我们也想自己造轮子开源给别人用呢？可以用JitPack。比Maven Central、jCenter简单多了。  ####JitPack是什么？  JitPack是一个自定义的Maven仓库。  发布步">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/915812-025f63f205d3da36.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/915812-687498a28c301ba6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/915812-33d2eaa1c6d5a7ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/915812-d0e273408c18cf62.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/915812-2ee6782dd8d78dc4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-03-19T10:59:14.063Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="android">
+<meta name="twitter:description" content="平时我们Android开发的时候，为了不重复造轮子，经常用到第三方开源项目，有了Android studio的Gradle，我们就一句代码就可以依赖远程代码仓库了，这比eclipse方便多了。假如我们也想自己造轮子开源给别人用呢？可以用JitPack。比Maven Central、jCenter简单多了。  ####JitPack是什么？  JitPack是一个自定义的Maven仓库。  发布步">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/915812-025f63f205d3da36.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+    
+        <link rel="alternate" type="application/atom+xml" title="Karma&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Karma</h5>
+          <a href="mailto:1026karma@gmail.com" title="1026karma@gmail.com" class="mail">1026karma@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主頁
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/karmalove" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://twitter.com/1026Karma" target="_blank">
+                <i class="icon icon-lg icon-twitter"></i>
+                Twitter
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.facebook.com/kevin.steven.7169?ref=bookmarks" target="_blank">
+                <i class="icon icon-lg icon-facebook"></i>
+                Facebook
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.jianshu.com/u/75f356aaa50a" target="_blank">
+                <i class="icon icon-lg icon-book"></i>
+                簡書
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">android</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header page-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">android</h1>
+        <h5 class="subtitle">
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    <article class="page-article fade" itemprop="blogPage">
+        <div class="post-content page-content" id="page-content" itemprop="pageContent">
+            <blockquote>
+<p>平时我们Android开发的时候，为了不重复造轮子，经常用到第三方开源项目，有了Android studio的Gradle，我们就一句代码就可以依赖远程代码仓库了，这比eclipse方便多了。假如我们也想自己造轮子开源给别人用呢？可以用<strong>JitPack</strong>。比<strong>Maven Central</strong>、<strong>jCenter</strong>简单多了。</p>
+</blockquote>
+<p>####JitPack是什么？</p>
+<blockquote>
+<p>JitPack是一个自定义的Maven仓库。</p>
+</blockquote>
+<h4 id="发布步骤"><a href="#发布步骤" class="headerlink" title="发布步骤"></a>发布步骤</h4><h5 id="1-新建一个Android项目"><a href="#1-新建一个Android项目" class="headerlink" title="1.新建一个Android项目"></a>1.新建一个Android项目</h5><ul>
+<li>在Android studio下新建一个AndroidUtil项目</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://upload-images.jianshu.io/upload_images/915812-025f63f205d3da36.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="project" title>
+                </div>
+                <div class="image-caption">project</div>
+            </figure>
+<h5 id="2-在AndroidUtil项目下新建一个library"><a href="#2-在AndroidUtil项目下新建一个library" class="headerlink" title="2.在AndroidUtil项目下新建一个library"></a>2.在AndroidUtil项目下新建一个library</h5><ul>
+<li>新建一个library，名称随便写（你喜欢就好），这个library就是我们要push到JitPack开源的仓库</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://upload-images.jianshu.io/upload_images/915812-687498a28c301ba6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="library" title>
+                </div>
+                <div class="image-caption">library</div>
+            </figure>
+<ul>
+<li><p>在library的build.gradle下添加以下代码：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: <span class="string">'com.github.dcendents.android-maven'</span>  </span><br><span class="line"><span class="keyword">group</span>=<span class="string">'com.github.YourUsername'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在AndroidUtil项目下的根目录build.gradle添加以下代码<br>插件版本可以去官网查看，尽量使用最新版本，在AndroidStudio 2.2 之后插件要使用 1.4.1 以上的版本。<br><code>classpath &#39;com.github.dcendents:android-maven-gradle-plugin:1.4.1&#39;</code></p>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://upload-images.jianshu.io/upload_images/915812-33d2eaa1c6d5a7ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="build" title>
+                </div>
+                <div class="image-caption">build</div>
+            </figure>
+<h5 id="3-提交项目的GitHub"><a href="#3-提交项目的GitHub" class="headerlink" title="3.提交项目的GitHub"></a>3.提交项目的GitHub</h5><p><strong>此处省略一万个字</strong></p>
+<h5 id="4-Release你的仓库或者给你的仓库打一个Tag-重点"><a href="#4-Release你的仓库或者给你的仓库打一个Tag-重点" class="headerlink" title="4.Release你的仓库或者给你的仓库打一个Tag(重点)"></a>4.Release你的仓库或者给你的仓库打一个Tag(重点)</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://upload-images.jianshu.io/upload_images/915812-d0e273408c18cf62.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" title>
+                </div>
+                <div class="image-caption">image.png</div>
+            </figure>
+<h5 id="5-将你的仓库地址提交到JitPack-重点"><a href="#5-将你的仓库地址提交到JitPack-重点" class="headerlink" title="5.将你的仓库地址提交到JitPack(重点)"></a>5.将你的仓库地址提交到JitPack(重点)</h5><ul>
+<li><a href="https://jitpack.io/" target="_blank" rel="noopener">JitPack地址</a></li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://upload-images.jianshu.io/upload_images/915812-2ee6782dd8d78dc4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" title>
+                </div>
+                <div class="image-caption">image.png</div>
+            </figure>
+<h5 id="6-将远程仓库接入到项目中"><a href="#6-将远程仓库接入到项目中" class="headerlink" title="6.将远程仓库接入到项目中"></a>6.将远程仓库接入到项目中</h5><ul>
+<li><ol>
+<li>在项目根目录的build.gradle<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">allprojects &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        jcenter()</span><br><span class="line">        maven &#123; url &apos;https://jitpack.io&apos; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>2.在module的build.gradle下<br><code>com.github.KarmaOS:AndroidUtil:v1.0.0</code></p>
+</li>
+</ul>
+<p>[参考文章]<br><a href="http://www.gcssloop.com/course/PublishLibraryByJitPack/" target="_blank" rel="noopener">1</a><br><a href="https://joyrun.github.io/2016/07/21/opensource/" target="_blank" rel="noopener">2</a></p>
+
+        </div>
+
+        
+        <div class="card page-about-me flex-row">
+            <a href="/" class="avatar waves-effect waves-circle waves-light"><img src="/img/avatar.jpg"></a>
+            <div class="content flex-col">
+                <p><strong>Karma</strong></p>
+                <p><em>一名韭菜的自我修養</em></p>
+                <p>用户页面中作者相关的描述性文字，如不需要设为 false</p>
+            </div>
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/karmalove/karmalove.github.io.git/android/&title=《android》 — Karma's Blog&pic=https://github.com/karmalove/karmalove.github.io.git/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/karmalove/karmalove.github.io.git/android/&title=《android》 — Karma's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/karmalove/karmalove.github.io.git/android/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《android》 — Karma's Blog&url=https://github.com/karmalove/karmalove.github.io.git/android/&via=https://github.com/karmalove/karmalove.github.io.git" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/karmalove/karmalove.github.io.git/android/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+        
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </article>
+    
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        只要錢到位，什麼姿勢都會~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.png" data-alipay="/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Karma &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/karmalove/karmalove.github.io.git/android/&title=《android》 — Karma's Blog&pic=https://github.com/karmalove/karmalove.github.io.git/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/karmalove/karmalove.github.io.git/android/&title=《android》 — Karma's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/karmalove/karmalove.github.io.git/android/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《android》 — Karma's Blog&url=https://github.com/karmalove/karmalove.github.io.git/android/&via=https://github.com/karmalove/karmalove.github.io.git" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/karmalove/karmalove.github.io.git/android/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJUlEQVR42u3awW7rMAwEwPz/T+ddC7Qxdin3FZZGp8B2LI0PBEXq9YrH+8P4evf7k9/f8OnN1/+9bWBgYDyW8b4cCaOdZX3eH2bHwMA4gJGEwk/P5yG4/UDJ2jAwMDDa37PQmX8yDAwMjJyxkkTmG2AMDAyMdjN5/eo2ifyzvTgGBsYDGXmx7P///pX+BgYGxqMY73IkJf7fC8EfV4WBgbE1Iw9w6+X74eLihigGBsY5jLw9OSvGtW++XtUwrmNgYDyK0Rbo83RwZQPcfmIMDIy9Ge0xiLbx2QbolSYEBgbGroz81W3Lsw6Xdx0Iw8DAOIDRFsiueW3JLHlzlHtiYGBsxGgrcytXZilgnZ5iYGAcxsgTwfz67KBGEYIxMDC2Y7QHHfKksC2xtWW7qF6IgYGxBSO5fUPn4aZNbJQUYmBgbMoYFraCsVJKW8JgYGBsxFgR58uaBd+i/o+BgXEAY+XgV36cIj8K1pb/MDAw9mbMgmBbLGufbK9gYGCcwFhpKK4cY83/FV3BwMA4hrEecGeRfmUuDAyM0xiz8JeH3eQoxrAkh4GBsSnjXY42UF5/ghxc9F0xMDC2Y7THJmbF+nZZs8YDBgbG3owkyM7K922ToG1SYmBgnMZo25DrsPrYxDUSAwMDo0zX8oLdyvb4ldzAwMA4mNEmkcm/8uLdbQEXAwPjUYzZNLMjX3lRrwjHGBgYWzPyCdpyf16wuysxxcDA2I7xD6XO+ghHMYegAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '春風吹又生！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!韭菜割不盡!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

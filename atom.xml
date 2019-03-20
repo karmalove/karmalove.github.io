@@ -5,9 +5,9 @@
   <subtitle>一名韭菜的自我修養</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://github.com/karmalove/karmalove.github.io.git/"/>
-  <updated>2019-03-19T07:49:39.711Z</updated>
-  <id>https://github.com/karmalove/karmalove.github.io.git/</id>
+  <link href="https://developer.android.com/"/>
+  <updated>2019-03-19T11:03:35.756Z</updated>
+  <id>https://developer.android.com/</id>
   
   <author>
     <name>Karma</name>
@@ -17,9 +17,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>android</title>
+    <link href="https://developer.android.com/2019/03/19/jitpack/"/>
+    <id>https://developer.android.com/2019/03/19/jitpack/</id>
+    <published>2019-03-19T10:30:51.000Z</published>
+    <updated>2019-03-19T11:03:35.756Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>平时我们Android开发的时候，为了不重复造轮子，经常用到第三方开源项目，有了Android studio的Gradle，我们就一句代码就可以依赖远程代码仓库了，这比eclipse方便多了。假如我们也想自己造轮子开源给别人用呢？可以用<strong>JitPack</strong>。比<strong>Maven Central</strong>、<strong>jCenter</strong>简单多了。</p></blockquote><h4 id="JitPack是什么？"><a href="#JitPack是什么？" class="headerlink" title="JitPack是什么？"></a>JitPack是什么？</h4><blockquote><p>JitPack是一个自定义的Maven仓库。</p></blockquote><h4 id="发布步骤"><a href="#发布步骤" class="headerlink" title="发布步骤"></a>发布步骤</h4><h5 id="1-新建一个Android项目"><a href="#1-新建一个Android项目" class="headerlink" title="1.新建一个Android项目"></a>1.新建一个Android项目</h5><ul><li>在Android studio下新建一个AndroidUtil项目</li></ul><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://upload-images.jianshu.io/upload_images/915812-025f63f205d3da36.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="project" title>                </div>                <div class="image-caption">project</div>            </figure><h5 id="2-在AndroidUtil项目下新建一个library"><a href="#2-在AndroidUtil项目下新建一个library" class="headerlink" title="2.在AndroidUtil项目下新建一个library"></a>2.在AndroidUtil项目下新建一个library</h5><ul><li>新建一个library，名称随便写（你喜欢就好），这个library就是我们要push到JitPack开源的仓库</li></ul><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://upload-images.jianshu.io/upload_images/915812-687498a28c301ba6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="library" title>                </div>                <div class="image-caption">library</div>            </figure><ul><li><p>在library的build.gradle下添加以下代码：</p><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: <span class="string">'com.github.dcendents.android-maven'</span>  </span><br><span class="line"><span class="keyword">group</span>=<span class="string">'com.github.YourUsername'</span></span><br></pre></td></tr></table></figure></li><li><p>在AndroidUtil项目下的根目录build.gradle添加以下代码<br>插件版本可以去官网查看，尽量使用最新版本，在AndroidStudio 2.2 之后插件要使用 1.4.1 以上的版本。<br><code>classpath &#39;com.github.dcendents:android-maven-gradle-plugin:1.4.1&#39;</code></p></li></ul><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://upload-images.jianshu.io/upload_images/915812-33d2eaa1c6d5a7ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="build" title>                </div>                <div class="image-caption">build</div>            </figure><h5 id="3-提交项目的GitHub"><a href="#3-提交项目的GitHub" class="headerlink" title="3.提交项目的GitHub"></a>3.提交项目的GitHub</h5><p><strong>此处省略一万个字</strong></p><h5 id="4-Release你的仓库或者给你的仓库打一个Tag-重点"><a href="#4-Release你的仓库或者给你的仓库打一个Tag-重点" class="headerlink" title="4.Release你的仓库或者给你的仓库打一个Tag(重点)"></a>4.Release你的仓库或者给你的仓库打一个Tag(重点)</h5><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://upload-images.jianshu.io/upload_images/915812-d0e273408c18cf62.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" title>                </div>                <div class="image-caption">image.png</div>            </figure><h5 id="5-将你的仓库地址提交到JitPack-重点"><a href="#5-将你的仓库地址提交到JitPack-重点" class="headerlink" title="5.将你的仓库地址提交到JitPack(重点)"></a>5.将你的仓库地址提交到JitPack(重点)</h5><ul><li><a href="https://jitpack.io/" target="_blank" rel="noopener">JitPack地址</a></li></ul><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://upload-images.jianshu.io/upload_images/915812-2ee6782dd8d78dc4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" title>                </div>                <div class="image-caption">image.png</div>            </figure><h5 id="6-将远程仓库接入到项目中"><a href="#6-将远程仓库接入到项目中" class="headerlink" title="6.将远程仓库接入到项目中"></a>6.将远程仓库接入到项目中</h5><ul><li><ol><li>在项目根目录的build.gradle<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">allprojects &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        jcenter()</span><br><span class="line">        maven &#123; url &apos;https://jitpack.io&apos; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol></li><li><p>2.在module的build.gradle下<br><code>com.github.KarmaOS:AndroidUtil:v1.0.0</code></p></li></ul><p>[参考文章]<br><a href="http://www.gcssloop.com/course/PublishLibraryByJitPack/" target="_blank" rel="noopener">1</a><br><a href="https://joyrun.github.io/2016/07/21/opensource/" target="_blank" rel="noopener">2</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;平时我们Android开发的时候，为了不重复造轮子，经常用到第三方开源项目，有了Android studio的Gradle，我们就一句代码就可以依赖远程代码仓库了，这比eclipse方便多了。假如我们也想自己造轮子开源给别人用呢？可以用&lt;stron
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
-    <link href="https://github.com/karmalove/karmalove.github.io.git/2019/03/19/hello-world/"/>
-    <id>https://github.com/karmalove/karmalove.github.io.git/2019/03/19/hello-world/</id>
+    <link href="https://developer.android.com/2019/03/19/hello-world/"/>
+    <id>https://developer.android.com/2019/03/19/hello-world/</id>
     <published>2019-03-19T07:49:39.711Z</published>
     <updated>2019-03-19T07:49:39.711Z</updated>
     

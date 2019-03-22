@@ -14,17 +14,18 @@
     
     
     
-    <title>android | Karma&#39;s Blog | 一名韭菜的自我修養</title>
+    <title>使用JitPack发布Android开源库 | Karma&#39;s Blog | 一名韭菜的自我修養</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content>
+    <meta name="keywords" content="android">
     <meta name="description" content="平时我们Android开发的时候，为了不重复造轮子，经常用到第三方开源项目，有了Android studio的Gradle，我们就一句代码就可以依赖远程代码仓库了，这比eclipse方便多了。假如我们也想自己造轮子开源给别人用呢？可以用JitPack。比Maven Central、jCenter简单多了。  JitPack是什么？ JitPack是一个自定义的Maven仓库。  发布步骤1.新建">
+<meta name="keywords" content="android">
 <meta property="og:type" content="article">
-<meta property="og:title" content="android">
-<meta property="og:url" content="https://developer.android.com/2019/03/19/jitpack/index.html">
+<meta property="og:title" content="使用JitPack发布Android开源库">
+<meta property="og:url" content="https://developer.android.com/2017/03/19/jitpack/index.html">
 <meta property="og:site_name" content="Karma&#39;s Blog">
 <meta property="og:description" content="平时我们Android开发的时候，为了不重复造轮子，经常用到第三方开源项目，有了Android studio的Gradle，我们就一句代码就可以依赖远程代码仓库了，这比eclipse方便多了。假如我们也想自己造轮子开源给别人用呢？可以用JitPack。比Maven Central、jCenter简单多了。  JitPack是什么？ JitPack是一个自定义的Maven仓库。  发布步骤1.新建">
 <meta property="og:locale" content="default">
@@ -33,9 +34,9 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/915812-33d2eaa1c6d5a7ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/915812-d0e273408c18cf62.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/915812-2ee6782dd8d78dc4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-03-19T11:03:35.756Z">
+<meta property="og:updated_time" content="2019-03-20T03:23:28.426Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="android">
+<meta name="twitter:title" content="使用JitPack发布Android开源库">
 <meta name="twitter:description" content="平时我们Android开发的时候，为了不重复造轮子，经常用到第三方开源项目，有了Android studio的Gradle，我们就一句代码就可以依赖远程代码仓库了，这比eclipse方便多了。假如我们也想自己造轮子开源给别人用呢？可以用JitPack。比Maven Central、jCenter简单多了。  JitPack是什么？ JitPack是一个自定义的Maven仓库。  发布步骤1.新建">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/915812-025f63f205d3da36.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
     
@@ -75,7 +76,7 @@
             <li class="waves-block waves-effect">
               <a href="/">
                 <i class="icon icon-lg icon-home"></i>
-                主頁
+                Home
               </a>
             </li>
         
@@ -90,13 +91,6 @@
               <a href="/tags">
                 <i class="icon icon-lg icon-tags"></i>
                 Tags
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/categories">
-                <i class="icon icon-lg icon-th-list"></i>
-                Categories
               </a>
             </li>
         
@@ -139,7 +133,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">android</div>
+        <div class="flex-col header-title ellipsis">使用JitPack发布Android开源库</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -161,11 +155,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">android</h1>
+        <h1 class="title">使用JitPack发布Android开源库</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-03-19T10:30:51.000Z" itemprop="datePublished" class="page-time">
-  2019-03-19
+                <time datetime="2017-03-19T10:30:51.000Z" itemprop="datePublished" class="page-time">
+  2017-03-19
 </time>
 
 
@@ -192,9 +186,9 @@
 <article id="post-jitpack" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">android</h1>
+        <h1 class="post-card-title">使用JitPack发布Android开源库</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-03-19 18:30:51" datetime="2019-03-19T10:30:51.000Z" itemprop="datePublished">2019-03-19</time>
+            <time class="post-time" title="2017-03-19 18:30:51" datetime="2017-03-19T10:30:51.000Z" itemprop="datePublished">2017-03-19</time>
 
             
 
@@ -283,12 +277,12 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-03-19T11:03:35.756Z" itemprop="dateUpdated">2019-03-19 19:03:35</time>
+    Last updated: <time datetime="2019-03-20T03:23:28.426Z" itemprop="dateUpdated">2019-03-20 11:23:28</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/03/19/jitpack/" target="_blank" rel="external">https://developer.android.com/2019/03/19/jitpack/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2017/03/19/jitpack/" target="_blank" rel="external">https://developer.android.com/2017/03/19/jitpack/</a>
         
     </div>
     
@@ -309,6 +303,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
+
 
             
 <div class="page-share-wrap">
@@ -317,7 +313,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://developer.android.com/2019/03/19/jitpack/&title=《android》 — Karma's Blog&pic=https://developer.android.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://developer.android.com/2017/03/19/jitpack/&title=《使用JitPack发布Android开源库》 — Karma's Blog&pic=https://developer.android.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -327,22 +323,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://developer.android.com/2019/03/19/jitpack/&title=《android》 — Karma's Blog&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://developer.android.com/2017/03/19/jitpack/&title=《使用JitPack发布Android开源库》 — Karma's Blog&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://developer.android.com/2019/03/19/jitpack/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://developer.android.com/2017/03/19/jitpack/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《android》 — Karma's Blog&url=https://developer.android.com/2019/03/19/jitpack/&via=https://developer.android.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《使用JitPack发布Android开源库》 — Karma's Blog&url=https://developer.android.com/2017/03/19/jitpack/&via=https://developer.android.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://developer.android.com/2019/03/19/jitpack/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://developer.android.com/2017/03/19/jitpack/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -362,12 +358,19 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/03/19/android/android-otg/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Android OTG开发</h4>
+      </a>
+    </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/03/19/hello-world/" id="post-next" class="post-nav-link">
+      <a href="/2015/03/19/hello-world/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
         <h4 class="title">Hello World</h4>
       </a>
@@ -468,7 +471,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://developer.android.com/2019/03/19/jitpack/&title=《android》 — Karma's Blog&pic=https://developer.android.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://developer.android.com/2017/03/19/jitpack/&title=《使用JitPack发布Android开源库》 — Karma's Blog&pic=https://developer.android.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -478,22 +481,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://developer.android.com/2019/03/19/jitpack/&title=《android》 — Karma's Blog&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://developer.android.com/2017/03/19/jitpack/&title=《使用JitPack发布Android开源库》 — Karma's Blog&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://developer.android.com/2019/03/19/jitpack/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://developer.android.com/2017/03/19/jitpack/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《android》 — Karma's Blog&url=https://developer.android.com/2019/03/19/jitpack/&via=https://developer.android.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《使用JitPack发布Android开源库》 — Karma's Blog&url=https://developer.android.com/2017/03/19/jitpack/&via=https://developer.android.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://developer.android.com/2019/03/19/jitpack/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://developer.android.com/2017/03/19/jitpack/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -504,7 +507,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACO0lEQVR42u3awW6EMAxFUf7/p6dSV1O1hPtsMSrOzQoVJuSwcJ3Yx4HH63u8X7+Ps7+fPUlmPu4YMmTIeCyDvPj31OvXnz1PfsU/jQwZMnZj1ELh+rdpqF1fX7xXhgwZMkC6xgP3+qPIkCFDRj/grkkkyPK0UoYMGTJqgXL9Kx6OyTy37MVlyJDxQEatMPCZ69vrGzJkyPj3jFc4PlOqjFclQ4aM0QxSnuTHYbUtbi0lPci+VoYMGSMYBFDbuNay1LRQKkOGjH0YtaYKHnbTAB0XHmTIkDGaUTtcq6VxvPGCzxP8P5EhQ8bDGf1GitrmtlaqlCFDxs6MTmMEmYEHXP5xZciQsSejc6yfbjV5s0WQGsqQIWMcgwDIC2ptE3yGi3RThgwZmzHSRC1t3uJtHMHzMmTIGM3olyf7LV+8CnmxBhkyZIxm1JrG+OLSYiRPE+OWCxkyZDyQwYuLPH3shHK+9NMarAwZMoYy+OFaLaXjrRj8k/2YR4YMGaMZnfDKj8xqzWFxbitDhoyhjDTV4yEybaHgrR4HX5AMGTIGMe5eKC8zkLsXbWEyZMgYx0C3wyJBbYl8yJAhYzfGKxy1podamTMoWsiQIWM0Iw1zfLridhQf/8mQIWM3BgmyZDOZFhLiHHb9IWTIkLEB446GiVooTwOxDBkyZNQyzfQwjhckUM+IDBkytmeQA7VaQTQthf6xiZUhQ8ZoBtnEpnc7qST5KMW9uAwZMh7I6BQG+mlfWuxsYWTIkPE8xhftuah2e37KvQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMUlEQVR42u3awY7CMAxF0f7/TxdpViCgvc9uR9S9WVVDRXKC5LETLwse6994fybvP//lefBPDxsyZMi4LGPdHN8Y21MSdm2ur/PKkCHjBox0KRxDwigh7axZhgwZMnBYrG0HmUWGDBky+uldmgimKakMGTJkkK/jQZYcvaUh+LBaXIYMGRdkdC4Gzn7+p/sNGTJk/DBjPWik4XU7fMezy5AhYzQjTfJqHQ58obXyWIYMGbMZtUSt82kt7O4krDJkyBjN4EUjSQFrbRmnX2HKkCFjKKNTuKZNGDzo72ylDBkyhjI6BSQvVtOLUrKhS7oUGTJkXJxBzq9qCyIlaK214sP9hgwZMkYz+B0CL2XTFgq+HTs3sTJkyBjKqF0MpGklL1njYzgZMmSMZqQXk0elemk45psoQ4aM2Yx+s1ctHewE5VN61mTIkPHDjE45GrREhOE7/h1kyJAxmsFDIS8veYtGXKzKkCHjNoz0KI2Xr+ksaavZy7MMGTJGM2rT8Pd54O68I0OGjLsxOu0RZBFHJalB1StDhoxxjLTRgSeFPHTyjUD/N2TIkDGC0bkA4AdwneXy6wQZMmTMY6zh4Evv7ChvvHg5NZQhQ8ZQRqeY7LdrpAklb/KQIUPGPAYPsjwTI+D46H87cMuQIeMGjFqQrTVP1NK7HZ4MGTJkNJ7TAjXdRBkyZMjgF5np84l1tgwZMoYy+u2n5M3aVQSCyZAhYzSjdjFQm4xvROcbZMiQMYjxABASIuA+0oWfAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 

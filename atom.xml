@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://developer.android.com/"/>
-  <updated>2019-03-20T10:20:30.348Z</updated>
+  <updated>2019-03-25T06:22:15.197Z</updated>
   <id>https://developer.android.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>王賢巧-Android開發工程師簡歷</title>
+    <link href="https://developer.android.com/2019/03/19/work/"/>
+    <id>https://developer.android.com/2019/03/19/work/</id>
+    <published>2019-03-19T02:30:51.000Z</published>
+    <updated>2019-03-25T06:22:15.197Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h1><blockquote><ul><li>Phone：15812869246</li><li>Email：<a href="mailto:1026karma@gmail.com" target="_blank" rel="noopener">1026karma@gmail.com</a></li></ul></blockquote><hr><h1 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h1><blockquote><ul><li>王贤巧/男/1993</li><li>3年Android移动开发经验</li><li>本科/广东科技学院计算机系    </li><li>交換生/台灣中國科技大學資訊系</li><li>Blog：<a href="https://karmalove.github.io/" target="_blank" rel="noopener">https://karmalove.github.io/</a> </li><li>Github：<a href="https://github.com/karmalove" target="_blank" rel="noopener">https://github.com/karmalove</a></li></ul></blockquote><hr><h1 id="技能清单"><a href="#技能清单" class="headerlink" title="技能清单"></a>技能清单</h1><blockquote><ul><li>熟悉 Android 应用框架设计，熟悉 Android 高性能编程及调优、熟悉多线程编程，熟练使用 AsyncTask，用多线程技术优化性能</li><li>熟悉蓝牙 ble 技术开发、了解 Android FFmpeg 视频压缩、视频直播</li><li>熟练使用 MVP 和 MVC、Retrofit 和 RxAndroid、RxJava、dageer2</li><li>熟悉 Android 事件分发机制、自定义控件、RecycleView 的使用、代码混淆和反编译 apk</li><li>熟悉 Android 的网络通信技术，对 http、https 和 socket 通信有一定的了解</li><li>了解常用的设计模式、熟练使用 Git、Svn、Jenkins</li><li>熟悉 Python、JavaScript、HTML、css</li></ul></blockquote><hr><h1 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h1><h2 id="深圳市三体科技有限公司（2017-9-2019-4"><a href="#深圳市三体科技有限公司（2017-9-2019-4" class="headerlink" title="深圳市三体科技有限公司（2017/9~2019/4)"></a>深圳市三体科技有限公司（2017/9~2019/4)</h2><h4 id="点愿项目"><a href="#点愿项目" class="headerlink" title="点愿项目"></a><a href="https://sj.qq.com/myapp/detail.htm?apkName=com.dykj.wishshare" target="_blank" rel="noopener">点愿</a>项目</h4><p>   （项目简介：一款在线\下载看视频APP）</p><blockquote><ul><li>独立开发点愿Android客户端</li><li>播放器基于ijkplayer进行开发</li><li>IM功能基于融云IM库进行开发</li><li>视频（上传/下载）断点续传基于OKhttp和rxjava进行开发</li><li>视频磁力链接下载技术基于反编译迅雷so开发</li><li>推送功能集成（小米、华为、魅族、友盟、FCM）</li><li>爬虫功能基于jsoup、htmlcleaner解析</li><li>广告模块接入广点通、今日头条和自己公司广告模块</li><li>使用热修复技术在线更新</li></ul></blockquote><h4 id="点传项目"><a href="#点传项目" class="headerlink" title="点传项目"></a><a href="https://sj.qq.com/myapp/detail.htm?apkName=com.stkj.android.wifishare" target="_blank" rel="noopener">点传</a>项目</h4><p>  （项目简介：基于WiFi热点点对点传输文件APP）</p><blockquote><ul><li>负责加入广告模块</li><li>负责接入推送</li></ul></blockquote><h4 id="一键换机项目"><a href="#一键换机项目" class="headerlink" title="一键换机项目"></a><a href>一键换机</a>项目</h4><p>  （项目简介：基于WiFi-direct技术传输文件APP）</p><blockquote><ul><li>负责部分UI开发</li><li>负责传输逻辑处理</li><li>负责接入推送（阿里推送、华为推送）</li></ul></blockquote><hr><h2 id="深圳市黑漂科技有限公司（2016-7-2017-5"><a href="#深圳市黑漂科技有限公司（2016-7-2017-5" class="headerlink" title="深圳市黑漂科技有限公司（2016/7~2017/5)"></a>深圳市黑漂科技有限公司（2016/7~2017/5)</h2><h4 id="黑漂钓鱼项目"><a href="#黑漂钓鱼项目" class="headerlink" title="黑漂钓鱼项目"></a><a href="https://sj.qq.com/myapp/detail.htm?apkName=com.heipiao.app.customer" target="_blank" rel="noopener">黑漂钓鱼</a>项目</h4><p>（项目简介：基于用户钓鱼需求开发的钓鱼客户端和钓鱼商家端APP）</p><blockquote><ul><li>独立开发黑漂钓鱼商家版和钓友版Android客户端</li><li>Ubuntu搭建gitlab版本控制服务器</li><li>Jenkins和蒲公英自动打包</li><li>使用MVP+retrofit+rxjava+dagger2开发</li><li>搭建移动端自动化测试Appium平台，用Python编写测试脚本</li></ul></blockquote><hr><h2 id="东莞市猎声电子科技有限公司（2015-6-2016-6"><a href="#东莞市猎声电子科技有限公司（2015-6-2016-6" class="headerlink" title="东莞市猎声电子科技有限公司（2015/6~2016/6)"></a>东莞市猎声电子科技有限公司（2015/6~2016/6)</h2><h4 id="we-playing项目"><a href="#we-playing项目" class="headerlink" title="we playing项目"></a><a href="http://www.liesheng.cc/index.html" target="_blank" rel="noopener">we playing</a>项目</h4><p>（项目简介：Android手机应用和蓝牙耳机通信记录运动数据的APP）</p><blockquote><ul><li>在项目负责蓝牙ble通信开发和地图开发</li><li>历史数据自定义折线图开发</li><li>上传Google play应用市场</li></ul></blockquote><hr>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;联系方式&quot;&gt;&lt;a href=&quot;#联系方式&quot; class=&quot;headerlink&quot; title=&quot;联系方式&quot;&gt;&lt;/a&gt;联系方式&lt;/h1&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Phone：15812869246&lt;/li&gt;
+&lt;li&gt;Email：&lt;a href=&quot;m
+      
+    
+    </summary>
+    
+    
+      <category term="個人信息" scheme="https://developer.android.com/tags/%E5%80%8B%E4%BA%BA%E4%BF%A1%E6%81%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>Android OTG开发</title>

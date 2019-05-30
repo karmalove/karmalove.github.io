@@ -5,9 +5,9 @@
   <subtitle>一名韭菜的自我修養</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://developer.android.com/"/>
-  <updated>2019-05-30T06:50:37.857Z</updated>
-  <id>https://developer.android.com/</id>
+  <link href="https://karmalove.github.io/"/>
+  <updated>2019-05-30T06:59:51.916Z</updated>
+  <id>https://karmalove.github.io/</id>
   
   <author>
     <name>Karma</name>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Trading_diary</title>
-    <link href="https://developer.android.com/2019/05/30/Trading-diary/"/>
-    <id>https://developer.android.com/2019/05/30/Trading-diary/</id>
+    <link href="https://karmalove.github.io/2019/05/30/Trading-diary/"/>
+    <id>https://karmalove.github.io/2019/05/30/Trading-diary/</id>
     <published>2019-05-30T06:43:44.000Z</published>
-    <updated>2019-05-30T06:50:37.857Z</updated>
+    <updated>2019-05-30T06:59:51.916Z</updated>
     
     <content type="html"><![CDATA[<h3 id="2019年05年29日"><a href="#2019年05年29日" class="headerlink" title="2019年05年29日"></a>2019年05年29日</h3><blockquote><p>買入PDD，買入理由：近段時間底部<br>買入NIO，買入理由：歷史最低價格，但是感覺還不是最底部。</p></blockquote>]]></content>
     
@@ -36,12 +36,14 @@
     </summary>
     
     
+      <category term="trading" scheme="https://karmalove.github.io/tags/trading/"/>
+    
   </entry>
   
   <entry>
     <title>交易总结</title>
-    <link href="https://developer.android.com/2019/05/27/tran/"/>
-    <id>https://developer.android.com/2019/05/27/tran/</id>
+    <link href="https://karmalove.github.io/2019/05/27/tran/"/>
+    <id>https://karmalove.github.io/2019/05/27/tran/</id>
     <published>2019-05-27T08:35:54.000Z</published>
     <updated>2019-05-27T09:20:24.075Z</updated>
     
@@ -62,8 +64,8 @@
   
   <entry>
     <title>王賢巧-Android開發工程師簡歷</title>
-    <link href="https://developer.android.com/2019/03/19/work/"/>
-    <id>https://developer.android.com/2019/03/19/work/</id>
+    <link href="https://karmalove.github.io/2019/03/19/work/"/>
+    <id>https://karmalove.github.io/2019/03/19/work/</id>
     <published>2019-03-19T02:30:51.000Z</published>
     <updated>2019-03-25T06:22:15.197Z</updated>
     
@@ -82,14 +84,14 @@
     </summary>
     
     
-      <category term="個人信息" scheme="https://developer.android.com/tags/%E5%80%8B%E4%BA%BA%E4%BF%A1%E6%81%AF/"/>
+      <category term="個人信息" scheme="https://karmalove.github.io/tags/%E5%80%8B%E4%BA%BA%E4%BF%A1%E6%81%AF/"/>
     
   </entry>
   
   <entry>
     <title>Android OTG开发</title>
-    <link href="https://developer.android.com/2018/03/19/android/android-otg/"/>
-    <id>https://developer.android.com/2018/03/19/android/android-otg/</id>
+    <link href="https://karmalove.github.io/2018/03/19/android/android-otg/"/>
+    <id>https://karmalove.github.io/2018/03/19/android/android-otg/</id>
     <published>2018-03-19T02:30:51.000Z</published>
     <updated>2019-03-20T10:20:30.348Z</updated>
     
@@ -106,16 +108,16 @@
     </summary>
     
     
-      <category term="android" scheme="https://developer.android.com/tags/android/"/>
+      <category term="android" scheme="https://karmalove.github.io/tags/android/"/>
     
-      <category term="otg" scheme="https://developer.android.com/tags/otg/"/>
+      <category term="otg" scheme="https://karmalove.github.io/tags/otg/"/>
     
   </entry>
   
   <entry>
     <title>使用JitPack发布Android开源库</title>
-    <link href="https://developer.android.com/2017/03/19/jitpack/"/>
-    <id>https://developer.android.com/2017/03/19/jitpack/</id>
+    <link href="https://karmalove.github.io/2017/03/19/jitpack/"/>
+    <id>https://karmalove.github.io/2017/03/19/jitpack/</id>
     <published>2017-03-19T10:30:51.000Z</published>
     <updated>2019-03-20T03:23:28.426Z</updated>
     
@@ -132,14 +134,14 @@
     </summary>
     
     
-      <category term="android" scheme="https://developer.android.com/tags/android/"/>
+      <category term="android" scheme="https://karmalove.github.io/tags/android/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://developer.android.com/2015/03/19/hello-world/"/>
-    <id>https://developer.android.com/2015/03/19/hello-world/</id>
+    <link href="https://karmalove.github.io/2015/03/19/hello-world/"/>
+    <id>https://karmalove.github.io/2015/03/19/hello-world/</id>
     <published>2015-03-19T02:30:51.000Z</published>
     <updated>2019-03-20T03:23:28.421Z</updated>
     
@@ -155,7 +157,7 @@
     </summary>
     
     
-      <category term="hexo" scheme="https://developer.android.com/tags/hexo/"/>
+      <category term="hexo" scheme="https://karmalove.github.io/tags/hexo/"/>
     
   </entry>
   

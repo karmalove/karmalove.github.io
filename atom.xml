@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://karmalove.github.io/"/>
-  <updated>2019-06-18T02:11:07.332Z</updated>
+  <updated>2019-06-26T07:05:14.850Z</updated>
   <id>https://karmalove.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>投資反思</title>
+    <link href="https://karmalove.github.io/2019/06/26/thinking/"/>
+    <id>https://karmalove.github.io/2019/06/26/thinking/</id>
+    <published>2019-06-26T06:48:33.000Z</published>
+    <updated>2019-06-26T07:05:14.850Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>如何從市場中那麼多人勝出？和別人的不同想法，比別人思考得更多，嚴格執行制訂的策略。</p></blockquote><p>###</p><ul><li>學習第二層思維</li><li>理解市場有效性及局限性</li><li>準確估計資產價值</li><li>價格與價值的關係</li><li>理解風險</li><li>識別風險</li><li>控制風險</li><li>關注週期</li><li>鐘擺意識</li><li>抵禦消極影響</li><li>逆向投資</li><li>尋找便宜貨</li><li>耐心等待機會</li><li>認識預測的局限性</li><li>正確認識自身</li><li>重視運氣</li><li>多元化投資</li><li>避免錯誤</li><li>增值的意義</li><li>合理預期</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;如何從市場中那麼多人勝出？和別人的不同想法，比別人思考得更多，嚴格執行制訂的策略。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;###&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;學習第二層思維&lt;/li&gt;
+&lt;li&gt;理解市場有效性及局限性&lt;/li&gt;
+&lt;li&gt;準確估計資產
+      
+    
+    </summary>
+    
+    
+      <category term="Thinking" scheme="https://karmalove.github.io/tags/Thinking/"/>
+    
+  </entry>
   
   <entry>
     <title>Python3.5安装requests错误</title>

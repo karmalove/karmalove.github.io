@@ -14,25 +14,24 @@
     
     
     
-    <title>2019年讀書清單 | Karma&#39;s Blog | 無財作力，少有斗智，既饒爭時，此其大經也。</title>
+    <title>Android异步消息处理机制分析 | Karma&#39;s Blog | 無財作力，少有斗智，既饒爭時，此其大經也。</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Book">
-    <meta name="description" content="2019年讀書清單 《期權投資策略》  《偉大的博弈 華爾街金融帝國的崛起》  《戰勝一切市場的人》  《投資最重要的事》  《債務危機》  《原則》  《一個投機者的告白》  《逃不開的經濟週期：歷史，理論與投資現實》  《濤動週期論 經濟週期決定人生財富的命運》  《乾隆時代的得與失》">
-<meta name="keywords" content="Book">
+    <meta name="keywords" content>
+    <meta name="description" content="Android异步消息处理机制分析 异步消息处理线程启动后会进入一个无限的循环体中，每循环一次，从内部的消息队列中取出一个消息，然后回调相应的消息处理函数，执行完成一个消息后则继续循环。若消息队列为空，线程则会阻塞等待。。。。。。    源码解析 异步消息处理机制涉及到主要三个类Handler、Looper、Message，其中Looper负责创建一个消息队列MessageQueue，然后进入一个">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019年讀書清單">
-<meta property="og:url" content="https://karmalove.github.io/2019/06/26/2019-book/index.html">
+<meta property="og:title" content="Android异步消息处理机制分析">
+<meta property="og:url" content="https://karmalove.github.io/2019/07/30/Android异步消息处理机制分析/index.html">
 <meta property="og:site_name" content="Karma&#39;s Blog">
-<meta property="og:description" content="2019年讀書清單 《期權投資策略》  《偉大的博弈 華爾街金融帝國的崛起》  《戰勝一切市場的人》  《投資最重要的事》  《債務危機》  《原則》  《一個投機者的告白》  《逃不開的經濟週期：歷史，理論與投資現實》  《濤動週期論 經濟週期決定人生財富的命運》  《乾隆時代的得與失》">
+<meta property="og:description" content="Android异步消息处理机制分析 异步消息处理线程启动后会进入一个无限的循环体中，每循环一次，从内部的消息队列中取出一个消息，然后回调相应的消息处理函数，执行完成一个消息后则继续循环。若消息队列为空，线程则会阻塞等待。。。。。。    源码解析 异步消息处理机制涉及到主要三个类Handler、Looper、Message，其中Looper负责创建一个消息队列MessageQueue，然后进入一个">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-26T07:20:44.541Z">
+<meta property="og:updated_time" content="2019-07-30T04:25:30.555Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2019年讀書清單">
-<meta name="twitter:description" content="2019年讀書清單 《期權投資策略》  《偉大的博弈 華爾街金融帝國的崛起》  《戰勝一切市場的人》  《投資最重要的事》  《債務危機》  《原則》  《一個投機者的告白》  《逃不開的經濟週期：歷史，理論與投資現實》  《濤動週期論 經濟週期決定人生財富的命運》  《乾隆時代的得與失》">
+<meta name="twitter:title" content="Android异步消息处理机制分析">
+<meta name="twitter:description" content="Android异步消息处理机制分析 异步消息处理线程启动后会进入一个无限的循环体中，每循环一次，从内部的消息队列中取出一个消息，然后回调相应的消息处理函数，执行完成一个消息后则继续循环。若消息队列为空，线程则会阻塞等待。。。。。。    源码解析 异步消息处理机制涉及到主要三个类Handler、Looper、Message，其中Looper负责创建一个消息队列MessageQueue，然后进入一个">
     
         <link rel="alternate" type="application/atom+xml" title="Karma&#39;s Blog" href="/atom.xml">
     
@@ -127,7 +126,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2019年讀書清單</div>
+        <div class="flex-col header-title ellipsis">Android异步消息处理机制分析</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -149,11 +148,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2019年讀書清單</h1>
+        <h1 class="title">Android异步消息处理机制分析</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-06-26T07:08:41.000Z" itemprop="datePublished" class="page-time">
-  2019-06-26
+                <time datetime="2019-07-30T04:23:34.000Z" itemprop="datePublished" class="page-time">
+  2019-07-30
 </time>
 
 
@@ -172,17 +171,17 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2019年讀書清單"><span class="post-toc-number">1.</span> <span class="post-toc-text">2019年讀書清單</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Android异步消息处理机制分析"><span class="post-toc-number">1.</span> <span class="post-toc-text">Android异步消息处理机制分析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#源码解析"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">源码解析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-Looper"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">1.Looper</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-2019-book" class="post-article article-type-post fade" itemprop="blogPost">
+<article id="post-Android异步消息处理机制分析" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2019年讀書清單</h1>
+        <h1 class="post-card-title">Android异步消息处理机制分析</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-06-26 15:08:41" datetime="2019-06-26T07:08:41.000Z" itemprop="datePublished">2019-06-26</time>
+            <time class="post-time" title="2019-07-30 12:23:34" datetime="2019-07-30T04:23:34.000Z" itemprop="datePublished">2019-07-30</time>
 
             
 
@@ -195,28 +194,22 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h2 id="2019年讀書清單"><a href="#2019年讀書清單" class="headerlink" title="2019年讀書清單"></a>2019年讀書清單</h2><ul>
-<li><p>《期權投資策略》</p>
-</li>
-<li><p>《偉大的博弈 華爾街金融帝國的崛起》</p>
-</li>
-<li><p>《戰勝一切市場的人》</p>
-</li>
-<li><p>《投資最重要的事》</p>
-</li>
-<li><p>《債務危機》</p>
-</li>
-<li><p>《原則》</p>
-</li>
-<li><p>《一個投機者的告白》</p>
-</li>
-<li><p>《逃不開的經濟週期：歷史，理論與投資現實》</p>
-</li>
-<li><p>《濤動週期論 經濟週期決定人生財富的命運》</p>
-</li>
-<li><p>《乾隆時代的得與失》</p>
+            <h1 id="Android异步消息处理机制分析"><a href="#Android异步消息处理机制分析" class="headerlink" title="Android异步消息处理机制分析"></a>Android异步消息处理机制分析</h1><blockquote>
+<p>异步消息处理线程启动后会进入一个无限的循环体中，每循环一次，从内部的消息队列中取出一个消息，然后回调相应的消息处理函数，执行完成一个消息后则继续循环。若消息队列为空，线程则会阻塞等待。。。。。。  </p>
+</blockquote>
+<h2 id="源码解析"><a href="#源码解析" class="headerlink" title="源码解析"></a>源码解析</h2><blockquote>
+<p>异步消息处理机制涉及到主要三个类<code>Handler</code>、<code>Looper</code>、<code>Message</code>，其中Looper负责创建一个消息队列<code>MessageQueue</code>，然后进入一个无限循环体<code>Loop</code>中不断从该<code>MessageQueue</code>中读取信息，消息的创建者就是单个或多个<code>Handler</code>  </p>
+</blockquote>
+<h3 id="1-Looper"><a href="#1-Looper" class="headerlink" title="1.Looper"></a>1.Looper</h3><ul>
+<li>对于Looper主要是prepare()和loop()这两个方法<ul>
+<li>首先看prepare()方法的实现<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public static final void prepare()&#123;</span><br><span class="line">			if(sThreadLocal.get()!=null)&#123;</span><br><span class="line">            throw new RuntimeException(&quot;Only one Looper may be created per thread&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			sThreadLocal.set(new Looper(true));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+</li>
+</ul>
+<p><strong> sThreadLocal是一个ThreadLocal对象，它可以在一个线程中存储变量。可以看到上面的代码将一个Looper实例set入ThreadLocal，并且判断了Loop实例是否为null，否则抛出异常。这说明了Looper.prepare()方法不能调用两次，同时也保证了一个线程中只有一个Looper实例 </strong></p>
+<pre><code>* 再看一下Looper的构造方法实现
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">private</span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -225,12 +218,12 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-06-26T07:20:44.541Z" itemprop="dateUpdated">2019-06-26 15:20:44</time>
+    Last updated: <time datetime="2019-07-30T04:25:30.555Z" itemprop="dateUpdated">2019-07-30 12:25:30</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/06/26/2019-book/" target="_blank" rel="external">https://karmalove.github.io/2019/06/26/2019-book/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/07/30/Android异步消息处理机制分析/" target="_blank" rel="external">https://karmalove.github.io/2019/07/30/Android异步消息处理机制分析/</a>
         
     </div>
     
@@ -251,8 +244,6 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Book/">Book</a></li></ul>
-
 
             
 <div class="page-share-wrap">
@@ -261,7 +252,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://karmalove.github.io/2019/06/26/2019-book/&title=《2019年讀書清單》 — Karma's Blog&pic=https://karmalove.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://karmalove.github.io/2019/07/30/Android异步消息处理机制分析/&title=《Android异步消息处理机制分析》 — Karma's Blog&pic=https://karmalove.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -271,22 +262,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://karmalove.github.io/2019/06/26/2019-book/&title=《2019年讀書清單》 — Karma's Blog&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://karmalove.github.io/2019/07/30/Android异步消息处理机制分析/&title=《Android异步消息处理机制分析》 — Karma's Blog&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://karmalove.github.io/2019/06/26/2019-book/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://karmalove.github.io/2019/07/30/Android异步消息处理机制分析/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019年讀書清單》 — Karma's Blog&url=https://karmalove.github.io/2019/06/26/2019-book/&via=https://karmalove.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android异步消息处理机制分析》 — Karma's Blog&url=https://karmalove.github.io/2019/07/30/Android异步消息处理机制分析/&via=https://karmalove.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://karmalove.github.io/2019/06/26/2019-book/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://karmalove.github.io/2019/07/30/Android异步消息处理机制分析/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -309,18 +300,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2019/07/30/Android异步消息处理机制分析/" id="post-prev" class="post-nav-link">
+      <a href="/2019/08/06/android-meet/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Android异步消息处理机制分析</h4>
+        <h4 class="title">面试总结</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/06/26/thinking/" id="post-next" class="post-nav-link">
+      <a href="/2019/06/26/2019-book/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">投資反思</h4>
+        <h4 class="title">2019年讀書清單</h4>
       </a>
     </div>
   
@@ -419,7 +410,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://karmalove.github.io/2019/06/26/2019-book/&title=《2019年讀書清單》 — Karma's Blog&pic=https://karmalove.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://karmalove.github.io/2019/07/30/Android异步消息处理机制分析/&title=《Android异步消息处理机制分析》 — Karma's Blog&pic=https://karmalove.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -429,22 +420,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://karmalove.github.io/2019/06/26/2019-book/&title=《2019年讀書清單》 — Karma's Blog&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://karmalove.github.io/2019/07/30/Android异步消息处理机制分析/&title=《Android异步消息处理机制分析》 — Karma's Blog&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://karmalove.github.io/2019/06/26/2019-book/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://karmalove.github.io/2019/07/30/Android异步消息处理机制分析/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019年讀書清單》 — Karma's Blog&url=https://karmalove.github.io/2019/06/26/2019-book/&via=https://karmalove.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android异步消息处理机制分析》 — Karma's Blog&url=https://karmalove.github.io/2019/07/30/Android异步消息处理机制分析/&via=https://karmalove.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://karmalove.github.io/2019/06/26/2019-book/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://karmalove.github.io/2019/07/30/Android异步消息处理机制分析/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -455,7 +446,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKUlEQVR42u3aQW7DMAwFUd//0u4BgjjzSbmAqNEqSN3ITwuCInldeN0f69sz/Pnn/7reWDJkyNiWcT+ubxuQl37+Jt33x9HIkCHjAAYJhelnsj05oOd3kyFDhgyewNUCLj8aGTJkyOgEXH5Z5UgZMmTIqF1i+WuRdJCU8165i8uQIWNDBq+6///nV/obMmTI2Ipxh4s3LPlr3e0lQ4aM2Qwe4GpNR5IOogsquBLLkCFjKiMt05PEkRfOOkeAZtZkyJAxgpGGws6Fkw+WFduoMmTIGMqotRV5KR9lpqtCrQwZMg5gvIGpvSI5CBkyZJzDIFt2Cm381+IaoQwZMg5jvDFssSood+ppMmTImMGoDVKsCtZpmhiU22TIkDGIsaphSeJ6mhTGV1wZMmQcw3gOdvxV+DO19oAMGTLOYaRDFbVzSi/AcRoqQ4aM0Yy1zYDa+EXQpHx+UoYMGUMZvKxGLpPk1zrHERTaZMiQMYhRLMHj0Yq0tbCgBytDhoyhjFrS1kkHeSDmIV6GDBknM1YFYp5i8mdkyJBxGqN/fe0HXL7vj8aADBkyBjHucKWFtvQ4SIgPfDJkyBjB4IsX62tDZrXhjBgmQ4aMbRk8yJLNarX69FDQJVaGDBnjGKQN0PkrbyoUkTJkyJABxh34NzxYx9MiMmTIkIGTwrRVWQvfrYArQ4aMDRmdMS8eXju91mXlNhkyZGzI4BvwFJCX9Wst0mI5T4YMGfsx/gCJomqYf56wywAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsklEQVR42u3a0W7jMAwEwP7/T7evBZr4dknLCA7jp6CxZY0KiAzFr6/4+v51vfv27+frv/wd8/vN9W6c2y48PDy8xdSTFyejXeNnoyUL8WJMPDw8vGO8/dDtt7Owkc8ZDw8P73N4bTa7GRMPDw/v/+C9S16vp5tP9IPiHh4eHt4lLy+hXv/4v37xJggdr7Xg4eHhxbw2Of6Ez0fO9/Dw8PDWp+r5hpuEijYFb4PBizng4eHhHeC1r5kBZkszS5fx8PDwnuFdf73f7ttJ3xWo8PDw8J7h5RNN7pyVGPKDt1UBFw8PD+9WXts0sHmqPVTLWw3w8PDwnuHlW/Zsoi14MxM8PDy8E7x8Eu12fKJ0m9//4nwPDw8P7yZeUjxtE9k2sc4Lu23pBA8PD+8Ery2/7g+o8qfy3wRvn8XDw8M7zJsdROUl3c0yJYn1i7fj4eHhPcjLSwB5ej27c1OkwMPDwzvBS46abjhVGzUTbJajOEnDw8PDK3l5MaIt19btUHFJtyid4OHh4R3g5QFgs63PEuV8nLadCw8PD2/DS7b7dop5OWMGzhu28PDw8M7x2gOwNnWeJeKbYscQgIeHhxfz2sOtpISxaQ6YLV8R9/Dw8PDWvNlB1yaZzssZeetAVKXGw8PDW/M223q+HHk4mb3rH0/h4eHhHebVjU1xwKhP4Rbh5+62NDw8PLw0gZ6xkwLHJoTUSTkeHh7eYd6sjaD9extCNq1deHh4ePfy7j2gykvDbSgaNijg4eHhHeC1LU11CXU0uU3D1vDCw8PDK3lJMMiPqWbIe1uv8PDw8J7htUlw3lDVLsesJWtYpcbDw8N7hNcWLDaYG0oheHh4eB/Am4WQfbk2T/rx8PDwnuHliW++Kc8CQ75A0b8KDw8P7wCv/cE/a7HKd+z8/htgeHh4eB3vB+Y1DQHjMqpSAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 

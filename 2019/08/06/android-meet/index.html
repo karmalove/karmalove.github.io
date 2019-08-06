@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>面试总结 | Karma&#39;s Blog | 無財作力，少有斗智，既饒爭時，此其大經也。</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="android">
+    <meta name="description" content="面试总结Java方面1.HashMap和HashTable的区别 通过HashMap和HashTable的源码去分析    2.Java垃圾回收机制 理解JVM，内存划分———方法区、内存栈、【虚拟机栈、本地方法栈、程序计数器（线程私有）】。理解回收算法：标记清除算法、可达性分析算法、标记整理算法、复制算法、分代算法    3.类加载机制 涉及热修复相关问题    4.线程和线程池、并发、锁等一系">
+<meta name="keywords" content="android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试总结">
+<meta property="og:url" content="https://karmalove.github.io/2019/08/06/android-meet/index.html">
+<meta property="og:site_name" content="Karma&#39;s Blog">
+<meta property="og:description" content="面试总结Java方面1.HashMap和HashTable的区别 通过HashMap和HashTable的源码去分析    2.Java垃圾回收机制 理解JVM，内存划分———方法区、内存栈、【虚拟机栈、本地方法栈、程序计数器（线程私有）】。理解回收算法：标记清除算法、可达性分析算法、标记整理算法、复制算法、分代算法    3.类加载机制 涉及热修复相关问题    4.线程和线程池、并发、锁等一系">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-06T09:17:12.807Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面试总结">
+<meta name="twitter:description" content="面试总结Java方面1.HashMap和HashTable的区别 通过HashMap和HashTable的源码去分析    2.Java垃圾回收机制 理解JVM，内存划分———方法区、内存栈、【虚拟机栈、本地方法栈、程序计数器（线程私有）】。理解回收算法：标记清除算法、可达性分析算法、标记整理算法、复制算法、分代算法    3.类加载机制 涉及热修复相关问题    4.线程和线程池、并发、锁等一系">
+    
+        <link rel="alternate" type="application/atom+xml" title="Karma&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Karma</h5>
+          <a href="mailto:1026karma@gmail.com" title="1026karma@gmail.com" class="mail">1026karma@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/karmalove" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://twitter.com/1026Karma" target="_blank">
+                <i class="icon icon-lg icon-twitter"></i>
+                Twitter
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.facebook.com/kevin.steven.7169?ref=bookmarks" target="_blank">
+                <i class="icon icon-lg icon-facebook"></i>
+                Facebook
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.jianshu.com/u/75f356aaa50a" target="_blank">
+                <i class="icon icon-lg icon-book"></i>
+                簡書
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">面试总结</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">面试总结</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-08-06T09:14:57.000Z" itemprop="datePublished" class="page-time">
+  2019-08-06
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#面试总结"><span class="post-toc-number">1.</span> <span class="post-toc-text">面试总结</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Java方面"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Java方面</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-HashMap和HashTable的区别"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">1.HashMap和HashTable的区别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-Java垃圾回收机制"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">2.Java垃圾回收机制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-类加载机制"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">3.类加载机制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-线程和线程池、并发、锁等一系列问题"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">4.线程和线程池、并发、锁等一系列问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-弱引用、软引用区别"><span class="post-toc-number">1.1.5.</span> <span class="post-toc-text">5.弱引用、软引用区别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-int、Integer区别"><span class="post-toc-number">1.1.6.</span> <span class="post-toc-text">6.int、Integer区别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-手写设计模式"><span class="post-toc-number">1.1.7.</span> <span class="post-toc-text">7.手写设计模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-数据结构"><span class="post-toc-number">1.1.8.</span> <span class="post-toc-text">8.数据结构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#9-算法"><span class="post-toc-number">1.1.9.</span> <span class="post-toc-text">9.算法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Android方面"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Android方面</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-activity、service、fragment、BroadcastReceiver相关知识点"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">1.activity、service、fragment、BroadcastReceiver相关知识点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-自定义view"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">2.自定义view</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-事件分发机制"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">3.事件分发机制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-消息分发机制"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">4.消息分发机制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-Binder机制，进程通信"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">5.Binder机制，进程通信</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-动态权限适配、换肤实现原理"><span class="post-toc-number">1.2.6.</span> <span class="post-toc-text">6.动态权限适配、换肤实现原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-SharedPreference实现原理，能否跨进程？"><span class="post-toc-number">1.2.7.</span> <span class="post-toc-text">7.SharedPreference实现原理，能否跨进程？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-性能优化问题"><span class="post-toc-number">1.2.8.</span> <span class="post-toc-text">8.性能优化问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#8-1、UI优化"><span class="post-toc-number">1.2.8.1.</span> <span class="post-toc-text">8.1、UI优化</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#8-2、内存优化"><span class="post-toc-number">1.2.8.2.</span> <span class="post-toc-text">8.2、内存优化</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#8-3、响应速度优化"><span class="post-toc-number">1.2.8.3.</span> <span class="post-toc-text">8.3、响应速度优化</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#8-4、其他性能优化"><span class="post-toc-number">1.2.8.4.</span> <span class="post-toc-text">8.4、其他性能优化</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#9-网络框架OkHttp、Retrofit的实现原理"><span class="post-toc-number">1.2.9.</span> <span class="post-toc-text">9.网络框架OkHttp、Retrofit的实现原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#11-线程切换框架RxJava的实现原理"><span class="post-toc-number">1.2.10.</span> <span class="post-toc-text">11.线程切换框架RxJava的实现原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#12-消息通知EventBus的实现原理"><span class="post-toc-number">1.2.11.</span> <span class="post-toc-text">12.消息通知EventBus的实现原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#13-图片加载库（Fresco、Glide、Picasso）实现原理"><span class="post-toc-number">1.2.12.</span> <span class="post-toc-text">13.图片加载库（Fresco、Glide、Picasso）实现原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#14-消息推送PUSH原理"><span class="post-toc-number">1.2.13.</span> <span class="post-toc-text">14.消息推送PUSH原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#15-TCP-IP、Http-Https、Socket的原理"><span class="post-toc-number">1.2.14.</span> <span class="post-toc-text">15.TCP/IP、Http/Https、Socket的原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#16-热更新、热修复、插件化"><span class="post-toc-number">1.2.15.</span> <span class="post-toc-text">16.热更新、热修复、插件化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#17-Flutter、Kotlin、rn的学习"><span class="post-toc-number">1.2.16.</span> <span class="post-toc-text">17.Flutter、Kotlin、rn的学习</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-android-meet" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">面试总结</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-08-06 17:14:57" datetime="2019-08-06T09:14:57.000Z" itemprop="datePublished">2019-08-06</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="面试总结"><a href="#面试总结" class="headerlink" title="面试总结"></a>面试总结</h1><h2 id="Java方面"><a href="#Java方面" class="headerlink" title="Java方面"></a>Java方面</h2><h3 id="1-HashMap和HashTable的区别"><a href="#1-HashMap和HashTable的区别" class="headerlink" title="1.HashMap和HashTable的区别"></a>1.HashMap和HashTable的区别</h3><blockquote>
+<p>通过HashMap和HashTable的源码去分析  </p>
+</blockquote>
+<h3 id="2-Java垃圾回收机制"><a href="#2-Java垃圾回收机制" class="headerlink" title="2.Java垃圾回收机制"></a>2.Java垃圾回收机制</h3><blockquote>
+<p>理解JVM，内存划分———方法区、内存栈、【虚拟机栈、本地方法栈、程序计数器（线程私有）】。<br>理解回收算法：标记清除算法、可达性分析算法、标记整理算法、复制算法、分代算法  </p>
+</blockquote>
+<h3 id="3-类加载机制"><a href="#3-类加载机制" class="headerlink" title="3.类加载机制"></a>3.类加载机制</h3><blockquote>
+<p>涉及热修复相关问题  </p>
+</blockquote>
+<h3 id="4-线程和线程池、并发、锁等一系列问题"><a href="#4-线程和线程池、并发、锁等一系列问题" class="headerlink" title="4.线程和线程池、并发、锁等一系列问题"></a>4.线程和线程池、并发、锁等一系列问题</h3><blockquote>
+<p>如何自定义一个线程池？  </p>
+</blockquote>
+<h3 id="5-弱引用、软引用区别"><a href="#5-弱引用、软引用区别" class="headerlink" title="5.弱引用、软引用区别"></a>5.弱引用、软引用区别</h3><h3 id="6-int、Integer区别"><a href="#6-int、Integer区别" class="headerlink" title="6.int、Integer区别"></a>6.int、Integer区别</h3><blockquote>
+<p>主要考值传递和引用传递问题  </p>
+</blockquote>
+<h3 id="7-手写设计模式"><a href="#7-手写设计模式" class="headerlink" title="7.手写设计模式"></a>7.手写设计模式</h3><blockquote>
+<p>1.单例模式<br>2.生产者/消费者模式<br>3.观察者模式<br>4.适配器模式<br>5.策略模式<br>6.建造者模式+工厂模式<br>7.MVC、MVP、MVVM区别  </p>
+</blockquote>
+<h3 id="8-数据结构"><a href="#8-数据结构" class="headerlink" title="8.数据结构"></a>8.数据结构</h3><blockquote>
+<p>1.平衡二叉树、二叉查找数、红黑树<br>2.HashMap、LinkedHashMap、ConcurrentHashMap，在用法和原理上有什么差异，很多公司会考HashMap原理，通过它做一些扩展，比如中国13亿人口年龄的排序问题，年龄对应桶的个数，年龄相同和hash相同问题类似。<br>3.ArrayList和LinkedList的区别<br>4..Set原理，这个和HashMap考得有点类似，考hash算法相关，被问到过常用hash算法。HashSet内部用到了HashMap  </p>
+</blockquote>
+<h3 id="9-算法"><a href="#9-算法" class="headerlink" title="9.算法"></a>9.算法</h3><hr>
+<h2 id="Android方面"><a href="#Android方面" class="headerlink" title="Android方面"></a>Android方面</h2><h3 id="1-activity、service、fragment、BroadcastReceiver相关知识点"><a href="#1-activity、service、fragment、BroadcastReceiver相关知识点" class="headerlink" title="1.activity、service、fragment、BroadcastReceiver相关知识点"></a>1.activity、service、fragment、BroadcastReceiver相关知识点</h3><h3 id="2-自定义view"><a href="#2-自定义view" class="headerlink" title="2.自定义view"></a>2.自定义view</h3><h3 id="3-事件分发机制"><a href="#3-事件分发机制" class="headerlink" title="3.事件分发机制"></a>3.事件分发机制</h3><h3 id="4-消息分发机制"><a href="#4-消息分发机制" class="headerlink" title="4.消息分发机制"></a>4.消息分发机制</h3><h3 id="5-Binder机制，进程通信"><a href="#5-Binder机制，进程通信" class="headerlink" title="5.Binder机制，进程通信"></a>5.Binder机制，进程通信</h3><h3 id="6-动态权限适配、换肤实现原理"><a href="#6-动态权限适配、换肤实现原理" class="headerlink" title="6.动态权限适配、换肤实现原理"></a>6.动态权限适配、换肤实现原理</h3><h3 id="7-SharedPreference实现原理，能否跨进程？"><a href="#7-SharedPreference实现原理，能否跨进程？" class="headerlink" title="7.SharedPreference实现原理，能否跨进程？"></a>7.SharedPreference实现原理，能否跨进程？</h3><h3 id="8-性能优化问题"><a href="#8-性能优化问题" class="headerlink" title="8.性能优化问题"></a>8.性能优化问题</h3><h4 id="8-1、UI优化"><a href="#8-1、UI优化" class="headerlink" title="8.1、UI优化"></a>8.1、UI优化</h4><h4 id="8-2、内存优化"><a href="#8-2、内存优化" class="headerlink" title="8.2、内存优化"></a>8.2、内存优化</h4><h4 id="8-3、响应速度优化"><a href="#8-3、响应速度优化" class="headerlink" title="8.3、响应速度优化"></a>8.3、响应速度优化</h4><h4 id="8-4、其他性能优化"><a href="#8-4、其他性能优化" class="headerlink" title="8.4、其他性能优化"></a>8.4、其他性能优化</h4><h3 id="9-网络框架OkHttp、Retrofit的实现原理"><a href="#9-网络框架OkHttp、Retrofit的实现原理" class="headerlink" title="9.网络框架OkHttp、Retrofit的实现原理"></a>9.网络框架OkHttp、Retrofit的实现原理</h3><h3 id="11-线程切换框架RxJava的实现原理"><a href="#11-线程切换框架RxJava的实现原理" class="headerlink" title="11.线程切换框架RxJava的实现原理"></a>11.线程切换框架RxJava的实现原理</h3><h3 id="12-消息通知EventBus的实现原理"><a href="#12-消息通知EventBus的实现原理" class="headerlink" title="12.消息通知EventBus的实现原理"></a>12.消息通知EventBus的实现原理</h3><h3 id="13-图片加载库（Fresco、Glide、Picasso）实现原理"><a href="#13-图片加载库（Fresco、Glide、Picasso）实现原理" class="headerlink" title="13.图片加载库（Fresco、Glide、Picasso）实现原理"></a>13.图片加载库（Fresco、Glide、Picasso）实现原理</h3><h3 id="14-消息推送PUSH原理"><a href="#14-消息推送PUSH原理" class="headerlink" title="14.消息推送PUSH原理"></a>14.消息推送PUSH原理</h3><h3 id="15-TCP-IP、Http-Https、Socket的原理"><a href="#15-TCP-IP、Http-Https、Socket的原理" class="headerlink" title="15.TCP/IP、Http/Https、Socket的原理"></a>15.TCP/IP、Http/Https、Socket的原理</h3><h3 id="16-热更新、热修复、插件化"><a href="#16-热更新、热修复、插件化" class="headerlink" title="16.热更新、热修复、插件化"></a>16.热更新、热修复、插件化</h3><h3 id="17-Flutter、Kotlin、rn的学习"><a href="#17-Flutter、Kotlin、rn的学习" class="headerlink" title="17.Flutter、Kotlin、rn的学习"></a>17.Flutter、Kotlin、rn的学习</h3>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-08-06T09:17:12.807Z" itemprop="dateUpdated">2019-08-06 17:17:12</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/08/06/android-meet/" target="_blank" rel="external">https://karmalove.github.io/2019/08/06/android-meet/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://karmalove.github.io">
+            <img src="/img/avatar.jpg" alt="Karma">
+            Karma
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://karmalove.github.io/2019/08/06/android-meet/&title=《面试总结》 — Karma's Blog&pic=https://karmalove.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://karmalove.github.io/2019/08/06/android-meet/&title=《面试总结》 — Karma's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://karmalove.github.io/2019/08/06/android-meet/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《面试总结》 — Karma's Blog&url=https://karmalove.github.io/2019/08/06/android-meet/&via=https://karmalove.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://karmalove.github.io/2019/08/06/android-meet/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/07/30/Android异步消息处理机制分析/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Android异步消息处理机制分析</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        只要錢到位，什麼姿勢都會~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.png" data-alipay="/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Karma &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://karmalove.github.io/2019/08/06/android-meet/&title=《面试总结》 — Karma's Blog&pic=https://karmalove.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://karmalove.github.io/2019/08/06/android-meet/&title=《面试总结》 — Karma's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://karmalove.github.io/2019/08/06/android-meet/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《面试总结》 — Karma's Blog&url=https://karmalove.github.io/2019/08/06/android-meet/&via=https://karmalove.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://karmalove.github.io/2019/08/06/android-meet/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLElEQVR42u3aS47iQBAFQO5/aWbTi5ZGwHtZpiVXhVcIGZeDRSp/j0d8PX9d/3/z+/tX97fPfHzjwsDAuC3j+fZK7nl1cMJeORcDA+M0RvIS7+/JA3F+Vn4uBgYGxvtHJ2E3CawYGBgY1zKSEjQJx+0TMDAwTmbkATF/rTaA/lEtjoGBcUNG3nX/+89fmW9gYGDcivEsrzxlbAeZs/f5+S0GBsbWjDzA5SlaO0KICtRgUQMDA2NvxmwkmQTilYWMFoaBgXECIz8sb5bN2m3tcAIDA2NvxixcrhyZtP7rUIuBgbE1Y33QWDfFgldfKnExMDC2Y7TLXlelfbNQHjXXMDAwtmOsNP3bFa7Z2lkxWsDAwNiUMUvg8tCZJ4JtI+/DzggGBsZ2jHaFawWfB9xihICBgbE14yut+fJPaQeZH5puGBgYBzDaY/JyNB8DzEpoDAyMXRntD/L0bham20CPgYFxGiMpKWfjzLYlV48zMTAwtmZc1SBrlydmSeGHAQMGBsYxjLbJ1Q4mk1Ry2IbDwMA4kpGvSuQBNx95tm0+DAyMcxht6LzqpfPm2stfYWBgbMp4ltdsRaMdatZUDAyMrRkra16zUnPWgJs9BwMDYyfGbJGibcbNks4cjIGBcQIjD3x5apgvTFyAxMDAwMgDX3nPrMQdHoCBgXEkI08fkyFlsuTxlYCLgYFxE0ZSxM7Ky/UhwcXtNgwMjBsy8tJxJbFrh6MrfwoGBsZGjH/i1foIeUfJdQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '春風吹又生！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!韭菜割不盡!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

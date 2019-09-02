@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="Karma&#39;s Blog">
 <meta property="og:description" content="期权希腊值含义及用法 期权的价格与标的资产价格、标的资产波动率、期权执行价格、期权到期时间、利率等因素有关，通常用希腊字母（Greeks）表示期权价格对于上述影响因素变化的敏感程度，是期权交易中重要的风险管理指标。  常用希腊字母及其含义如下表所示：   名称 符号 含义     Delta Δ 标的资产价格变化引起期权价格变化   Gamma γ 标的资产价格变化引起delta值的变化   Th">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-26T03:55:46.076Z">
+<meta property="og:updated_time" content="2019-09-02T08:40:09.136Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="期权希腊值含义">
 <meta name="twitter:description" content="期权希腊值含义及用法 期权的价格与标的资产价格、标的资产波动率、期权执行价格、期权到期时间、利率等因素有关，通常用希腊字母（Greeks）表示期权价格对于上述影响因素变化的敏感程度，是期权交易中重要的风险管理指标。  常用希腊字母及其含义如下表所示：   名称 符号 含义     Delta Δ 标的资产价格变化引起期权价格变化   Gamma γ 标的资产价格变化引起delta值的变化   Th">
@@ -132,7 +132,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -171,7 +171,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#期权希腊值含义及用法"><span class="post-toc-number">1.</span> <span class="post-toc-text">期权希腊值含义及用法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#常用希腊字母及其含义如下表所示："><span class="post-toc-number">1.1.</span> <span class="post-toc-text">常用希腊字母及其含义如下表所示：</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Delta值"><span class="post-toc-number">2.</span> <span class="post-toc-text">Delta值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Gamma值"><span class="post-toc-number">3.</span> <span class="post-toc-text">Gamma值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Vega值"><span class="post-toc-number">4.</span> <span class="post-toc-text">Vega值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Rho值"><span class="post-toc-number">5.</span> <span class="post-toc-text">Rho值</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#期权希腊值含义及用法"><span class="post-toc-number">1.</span> <span class="post-toc-text">期权希腊值含义及用法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#常用希腊字母及其含义如下表所示："><span class="post-toc-number">1.1.</span> <span class="post-toc-text">常用希腊字母及其含义如下表所示：</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Delta值"><span class="post-toc-number">2.</span> <span class="post-toc-text">Delta值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Gamma值"><span class="post-toc-number">3.</span> <span class="post-toc-text">Gamma值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Theta值"><span class="post-toc-number">4.</span> <span class="post-toc-text">Theta值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Vega值"><span class="post-toc-number">5.</span> <span class="post-toc-text">Vega值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Rho值"><span class="post-toc-number">6.</span> <span class="post-toc-text">Rho值</span></a></li></ol>
         </nav>
     </aside>
 
@@ -239,8 +239,7 @@
 <h3 id="Gamma值"><a href="#Gamma值" class="headerlink" title="Gamma值"></a>Gamma值</h3><blockquote>
 <p>Gamma就是Delta随标的价格变化而变化的幅度。当ETF价格变化0.001元时，Delta变化0.001<em>Gamma。<br>假设对冲组合由Delta份ETF空头和1份期权多头组成，Delta会随着ETF价格变化而变化。当ETF价格发生变化时，为了保证对冲的效果，需要调整ETF的头寸Delta。当ETF价格变化0.001元时，ETF的头寸Delta也会相应的变化0.001</em>Gamma。因此，Gamma表示的是对冲风险的难度。</p>
 </blockquote>
-<p>###Theta值</p>
-<blockquote>
+<h3 id="Theta值"><a href="#Theta值" class="headerlink" title="Theta值"></a>Theta值</h3><blockquote>
 <p>Theta衡量的是期权时间价值的损耗。随着到期日的临近，在其他条件不变的情况下，期权的时间价值会降低。</p>
 </blockquote>
 <h3 id="Vega值"><a href="#Vega值" class="headerlink" title="Vega值"></a>Vega值</h3><blockquote>
@@ -257,7 +256,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-08-26T03:55:46.076Z" itemprop="dateUpdated">2019-08-26 11:55:46</time>
+    最終更新：<time datetime="2019-09-02T08:40:09.136Z" itemprop="dateUpdated">2019-09-02 16:40:09</time>
 </span><br>
 
 
@@ -336,7 +335,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/09/02/java-单例模式/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">java 单例模式</h4>
+      </a>
+    </div>
   
 
   
@@ -420,7 +426,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
         </p>
     </div>
     <div class="bottom">

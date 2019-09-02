@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>java 单例模式 | Karma&#39;s Blog | 無財作力，少有斗智，既饒爭時，此其大經也。</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content>
+    <meta name="description" content="Java单例模式懒汉式单例1.适用于单线程环境（不推荐）123456public static Singleton getInstance()&amp;#123;			if(null==instance)&amp;#123;				instance=new Singleton();			&amp;#125;			return instance; &amp;#125; 2.适用于多线程环境，但效率不高（不推荐）123456publ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java 单例模式">
+<meta property="og:url" content="https://karmalove.github.io/2019/09/02/java-单例模式/index.html">
+<meta property="og:site_name" content="Karma&#39;s Blog">
+<meta property="og:description" content="Java单例模式懒汉式单例1.适用于单线程环境（不推荐）123456public static Singleton getInstance()&amp;#123;			if(null==instance)&amp;#123;				instance=new Singleton();			&amp;#125;			return instance; &amp;#125; 2.适用于多线程环境，但效率不高（不推荐）123456publ">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-09-02T08:40:09.124Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java 单例模式">
+<meta name="twitter:description" content="Java单例模式懒汉式单例1.适用于单线程环境（不推荐）123456public static Singleton getInstance()&amp;#123;			if(null==instance)&amp;#123;				instance=new Singleton();			&amp;#125;			return instance; &amp;#125; 2.适用于多线程环境，但效率不高（不推荐）123456publ">
+    
+        <link rel="alternate" type="application/atom+xml" title="Karma&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Karma</h5>
+          <a href="mailto:1026karma@gmail.com" title="1026karma@gmail.com" class="mail">1026karma@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/karmalove" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://twitter.com/1026Karma" target="_blank">
+                <i class="icon icon-lg icon-twitter"></i>
+                Twitter
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.facebook.com/kevin.steven.7169?ref=bookmarks" target="_blank">
+                <i class="icon icon-lg icon-facebook"></i>
+                Facebook
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.jianshu.com/u/75f356aaa50a" target="_blank">
+                <i class="icon icon-lg icon-book"></i>
+                簡書
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">java 单例模式</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">java 单例模式</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-09-02T08:38:38.000Z" itemprop="datePublished" class="page-time">
+  2019-09-02
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Java单例模式"><span class="post-toc-number">1.</span> <span class="post-toc-text">Java单例模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#懒汉式单例"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">懒汉式单例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-适用于单线程环境（不推荐）"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">1.适用于单线程环境（不推荐）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-适用于多线程环境，但效率不高（不推荐）"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">2.适用于多线程环境，但效率不高（不推荐）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-双重检验锁（推荐）"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">3.双重检验锁（推荐）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-静态内部类（Effective-Java-上推荐）"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">4.静态内部类（Effective Java 上推荐）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#饿汉式单例"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">饿汉式单例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#static-final"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">static final</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#枚举单例"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">枚举单例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#enum"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">enum</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-java-单例模式" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">java 单例模式</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-09-02 16:38:38" datetime="2019-09-02T08:38:38.000Z" itemprop="datePublished">2019-09-02</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Java单例模式"><a href="#Java单例模式" class="headerlink" title="Java单例模式"></a>Java单例模式</h1><h2 id="懒汉式单例"><a href="#懒汉式单例" class="headerlink" title="懒汉式单例"></a>懒汉式单例</h2><h3 id="1-适用于单线程环境（不推荐）"><a href="#1-适用于单线程环境（不推荐）" class="headerlink" title="1.适用于单线程环境（不推荐）"></a>1.适用于单线程环境（不推荐）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public static Singleton getInstance()&#123;</span><br><span class="line">			if(null==instance)&#123;</span><br><span class="line">				instance=new Singleton();</span><br><span class="line">			&#125;</span><br><span class="line">			return instance; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-适用于多线程环境，但效率不高（不推荐）"><a href="#2-适用于多线程环境，但效率不高（不推荐）" class="headerlink" title="2.适用于多线程环境，但效率不高（不推荐）"></a>2.适用于多线程环境，但效率不高（不推荐）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public static synchronized Snigleton getInstance()&#123;</span><br><span class="line">			if(null==instance)&#123;</span><br><span class="line">				instance=new Singleton();</span><br><span class="line">			&#125;</span><br><span class="line">			return instance;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-双重检验锁（推荐）"><a href="#3-双重检验锁（推荐）" class="headerlink" title="3.双重检验锁（推荐）"></a>3.双重检验锁（推荐）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public static Singleton getInstance()&#123;</span><br><span class="line">			if(null==instance)&#123;</span><br><span class="line">			synchronized(Singleton.class)&#123;</span><br><span class="line">				if(null==instance)&#123;</span><br><span class="line">					instance=new Singleton();</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		return instance;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-静态内部类（Effective-Java-上推荐）"><a href="#4-静态内部类（Effective-Java-上推荐）" class="headerlink" title="4.静态内部类（Effective Java 上推荐）"></a>4.静态内部类（Effective Java 上推荐）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">private static class SingletonHolder&#123;</span><br><span class="line">	private static final Singleton INSTANCE=new Singleton();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public static final Singleton getInstance()&#123;</span><br><span class="line">		return SingletonHolder.INSTANCE;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="饿汉式单例"><a href="#饿汉式单例" class="headerlink" title="饿汉式单例"></a>饿汉式单例</h2><h3 id="static-final"><a href="#static-final" class="headerlink" title="static final"></a>static final</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">private static final Singleton INSTANCE=new Singleton();</span><br><span class="line"></span><br><span class="line">public static final Singleton getInstance()&#123;</span><br><span class="line">		return INSTANCE;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="枚举单例"><a href="#枚举单例" class="headerlink" title="枚举单例"></a>枚举单例</h2><h3 id="enum"><a href="#enum" class="headerlink" title="enum"></a>enum</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public enum EasySingleton&#123;</span><br><span class="line">    INSTANCE;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最終更新：<time datetime="2019-09-02T08:40:09.124Z" itemprop="dateUpdated">2019-09-02 16:40:09</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/09/02/java-单例模式/" target="_blank" rel="external">https://karmalove.github.io/2019/09/02/java-单例模式/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://karmalove.github.io">
+            <img src="/img/avatar.jpg" alt="Karma">
+            Karma
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://karmalove.github.io/2019/09/02/java-单例模式/&title=《java 单例模式》 — Karma's Blog&pic=https://karmalove.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://karmalove.github.io/2019/09/02/java-单例模式/&title=《java 单例模式》 — Karma's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://karmalove.github.io/2019/09/02/java-单例模式/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《java 单例模式》 — Karma's Blog&url=https://karmalove.github.io/2019/09/02/java-单例模式/&via=https://karmalove.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://karmalove.github.io/2019/09/02/java-单例模式/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/08/26/期权希腊值含义/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">期权希腊值含义</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        只要錢到位，什麼姿勢都會~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.png" data-alipay="/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Karma &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://karmalove.github.io/2019/09/02/java-单例模式/&title=《java 单例模式》 — Karma's Blog&pic=https://karmalove.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://karmalove.github.io/2019/09/02/java-单例模式/&title=《java 单例模式》 — Karma's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://karmalove.github.io/2019/09/02/java-单例模式/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《java 单例模式》 — Karma's Blog&url=https://karmalove.github.io/2019/09/02/java-单例模式/&via=https://karmalove.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://karmalove.github.io/2019/09/02/java-单例模式/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIUlEQVR42u3aS27jMBAFQN//0pptgCDSe01oAJPFlRHIjMqLRv8+n/hcP879M7+fn33r88bBwMD4WsZ1e2bP5H+5Zyf/FwMD4xxGEgrzZ3JS/vnhnTEwMDD+CJH36WOSLOY8DAwMjFkwzYvVNhHEwMDAmBWxydUJL7nhxVocAwPjCxl5iPz/n1+Zb2BgYHwV4ypPGxzbNtzsYGBg7M3IA1zb1s/bc1GBmix/YGBgbMpICsJ8DSLJ1vKQXcAwMDC2ZrTX1VcH4Bzw8IYYGBhHMmYJ3CwEL4VaDAyM4xltspjfsPIzYWBgnMNIUrFZ4ZoXwMmLPqSqGBgYBzDaIjNfIMuL5FnZ/DCJxcDA2IJxH2RXVjHyRlubjEaTWAwMjO0YKxflBecsTNdjVwwMjCMZbTDNg+xskBn1DjEwMLZmJCG1HTfmSeQsfGNgYOzNaJexZuOBtnBtF84wMDBOYyRBNvlWmzjmP8fS6ioGBsYXMvKQ2r5628jLXx0DAwMjb4cN/1mQgLblMQYGxsmMPIyujCfzRluxFoaBgbEpIwmXs2K1nTPOwj0GBsaujKs8balZNPfjNY7Ih4GBsREjPyu8Frmy8IGBgbErYzYGyNth7TByBsbAwDiBkQe+WWK3MkIoSlkMDAyM0fJEEmSHw4B2zomBgXEkoy1i26FmMpDAwMA4h5G30t4YT7ZLGxgYGKcxZoPG2digLXRXklQMDIwtGP8AXbnbGQtbVCcAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '春風吹又生！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!韭菜割不盡!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
